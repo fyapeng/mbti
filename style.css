@@ -74,17 +74,33 @@ p { color: #7f8c8d; line-height: 1.6; }
 #all-types-container { margin-top: 40px; border-top: 1px solid #e0e0e0; padding-top: 20px; }
 .types-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* 可以微调最小宽度 */
     gap: 15px;
     margin-top: 20px;
 }
 .type-card {
     padding: 15px;
-    border: 2px solid; /* 颜色由JS设置 */
+    border: 2px solid;
     border-radius: 8px;
     cursor: default;
     transition: transform 0.2s, box-shadow 0.2s;
+    display: flex; /* 使用flex布局让内容居中 */
+    flex-direction: column;
+    justify-content: center;
+    min-height: 80px; /* 保证卡片有一定高度 */
 }
-.type-card:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-.type-card-name { font-weight: bold; font-size: 1.1em; }
-.type-card-title { font-size: 0.9em; color: #555; }
+.type-card:hover { transform: translateY(-3px); box-shadow: 0 4px M10px rgba(0,0,0,0.1); }
+.type-card-name { font-weight: bold; font-size: 1.2em; margin-bottom: 5px; }
+
+/* 核心修改在这里 */
+.type-card-title {
+    font-size: 1em; /* 中文标题大小 */
+    color: #333;
+    line-height: 1.3; /* 调整行高 */
+}
+.type-card-title-en {
+    display: block; /* 让英文部分强制换行 */
+    font-size: 0.85em; /* 英文标题相对变小 */
+    color: #777; /* 颜色变浅，更柔和 */
+}
+
