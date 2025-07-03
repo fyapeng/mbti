@@ -57,7 +57,42 @@ p { color: #7f8c8d; line-height: 1.6; }
     font-size: 1em;
     transition: all 0.3s ease;
 }
-.option-btn:hover { background-color: #2980b9; transform: translateY(-2px); }
+/* 1. 为所有选项按钮设置通用样式 (无背景色) */
+.option-btn {
+    color: white;
+    border: none; /* 移除了边框 */
+    padding: 15px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold; /* 让字体更突出 */
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* 2. 为所有选项按钮设置通用的悬停效果 */
+.option-btn:hover {
+    transform: translateY(-3px); /* 悬浮效果更明显 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* 添加阴影增加立体感 */
+}
+
+/* 3. 单独设置第一个按钮 (选项A) 的颜色 */
+#option-a {
+    background-color: #2980b9; /* 一个漂亮的深蓝色 */
+}
+
+#option-a:hover {
+    background-color: #206694; /* 悬停时颜色变得更深 */
+}
+
+/* 4. 单独设置第二个按钮 (选项B) 的颜色 */
+#option-b {
+    background-color: #c0392b; /* 一个稳重的深红色 */
+}
+
+#option-b:hover {
+    background-color: #a93226; /* 悬停时颜色变得更深 */
+}
 
 /* 进度条 */
 .progress-bar-container { width: 100%; background-color: #ecf0f1; border-radius: 5px; margin-bottom: 20px; height: 10px; }
