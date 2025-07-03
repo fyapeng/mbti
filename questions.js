@@ -17,28 +17,28 @@
 // ===================================================================================
 const personalityTypes = {
     // 守护者 (Guardians) - SJ - 蓝色 🟦
-    "ISTJ": { title: "物流师 (The Inspector)", temperament: "守护者 (Guardian)", color: "#3498db", description: "认真、负责、务实。他们是事实和数据的忠实拥护者，喜欢让生活和工作井井有条，是值得信赖的传统守护者。" },
-    "ISFJ": { title: "守卫者 (The Protector)", temperament: "守护者 (Guardian)", color: "#3498db", description: "温和、有爱心、乐于助人。他们非常关心他人的感受，以极大的热情和慷慨来保护所爱之人，是忠诚的奉献者。" },
-    "ESTJ": { title: "总经理 (The Supervisor)", temperament: "守护者 (Guardian)", color: "#3498db", description: "高效、有条理、是优秀的管理者。他们是传统和秩序的典范，利用他们对正确、错误和社交可接受事物的理解来团结家庭和社区。" },
-    "ESFJ": { title: "执政官 (The Provider)", temperament: "守护者 (Guardian)", color: "#3498db", description: "热心、善于社交、乐于助人。他们非常受欢迎，总是热心地为他人提供帮助，并享受在社区中服务他人的感觉。" },
+    "ISTJ": { title_zh: "物流师", title_en: "The Inspector", temperament: "守护者 (Guardian)", color: "#3498db", description: "认真、负责、务实。他们是事实和数据的忠实拥护者，喜欢让生活和工作井井有条，是值得信赖的传统守护者。" },
+    "ISFJ": { title_zh: "守卫者", title_en: "The Protector", temperament: "守护者 (Guardian)", color: "#3498db", description: "温和、有爱心、乐于助人。他们非常关心他人的感受，以极大的热情和慷慨来保护所爱之人，是忠诚的奉献者。" },
+    "ESTJ": { title_zh: "总经理", title_en: "The Supervisor", temperament: "守护者 (Guardian)", color: "#3498db", description: "高效、有条理、是优秀的管理者。他们是传统和秩序的典范，利用他们对正确、错误和社交可接受事物的理解来团结家庭和社区。" },
+    "ESFJ": { title_zh: "执政官", title_en: "The Provider", temperament: "守护者 (Guardian)", color: "#3498db", description: "热心、善于社交、乐于助人。他们非常受欢迎，总是热心地为他人提供帮助，并享受在社区中服务他人的感觉。" },
     
     // 工匠/艺术家 (Artisans) - SP - 黄色 🟨
-    "ISTP": { title: "鉴赏家 (The Crafter)", temperament: "工匠 (Artisan)", color: "#f1c40f", description: "大胆、务实、热爱探索。他们喜欢用双手和眼睛去探索世界，通过冷静的理性主义和强烈的好奇心来体验生活。" },
-    "ISFP": { title: "探险家 (The Artist)", temperament: "工匠 (Artisan)", color: "#f1c40f", description: "迷人、敏感、有艺术气质。他们随时准备好探索和体验新事物，用灵活和自发的方式拥抱生活，寻找美感。" },
-    "ESTP": { title: "企业家 (The Dynamo)", temperament: "工匠 (Artisan)", color: "#f1c40f", description: "聪明、精力充沛、有洞察力。他们总是处于风暴的中心，喜欢冒险和行动，是天生的影响者。" },
-    "ESFP": { title: "表演者 (The Performer)", temperament: "工匠 (Artisan)", color: "#f1c40f", description: "热情、有趣、精力充沛。他们是天生的表演者，热衷于成为众人瞩目的焦点，并将简单的生活变成一场派对。" },
+    "ISTP": { title_zh: "鉴赏家", title_en: "The Crafter", temperament: "工匠 (Artisan)", color: "#f1c40f", description: "大胆、务实、热爱探索。他们喜欢用双手和眼睛去探索世界，通过冷静的理性主义和强烈的好奇心来体验生活。" },
+    "ISFP": { title_zh: "探险家", title_en: "The Artist", temperament: "工匠 (Artisan)", color: "#f1c40f", description: "迷人、敏感、有艺术气质。他们随时准备好探索和体验新事物，用灵活和自发的方式拥抱生活，寻找美感。" },
+    "ESTP": { title_zh: "企业家", title_en: "The Dynamo", temperament: "工匠 (Artisan)", color: "#f1c40f", description: "聪明、精力充沛、有洞察力。他们总是处于风暴的中心，喜欢冒险和行动，是天生的影响者。" },
+    "ESFP": { title_zh: "表演者", title_en: "The Performer", temperament: "工匠 (Artisan)", color: "#f1c40f", description: "热情、有趣、精力充沛。他们是天生的表演者，热衷于成为众人瞩目的焦点，并将简单的生活变成一场派对。" },
 
     // 理想主义者 (Idealists) - NF - 绿色 🟩
-    "INFJ": { title: "提倡者 (The Counselor)", temperament: "理想主义者 (Idealist)", color: "#2ecc71", description: "富有理想、有远见、深刻。他们安静而神秘，却能鼓舞人心，并孜孜不倦地为世界留下积极的印记。" },
-    "INFP": { title: "调停者 (The Healer)", temperament: "理想主义者 (Idealist)", color: "#2ecc71", description: "善良、富有诗意、利他主义。他们看似安静，但内心充满激情和火焰。他们总是从好的角度看待人和事，希望世界更美好。" },
-    "ENFJ": { title: "主人公 (The Teacher)", temperament: "理想主义者 (Idealist)", color: "#2ecc71", description: "有魅力、鼓舞人心、是天生的领导者。他们充满激情和魅力，能够吸引并激励听众，为共同的善而努力。" },
-    "ENFP": { title: "竞选者 (The Champion)", temperament: "理想主义者 (Idealist)", color: "#2ecc71", description: "热情、有创造力、善于社交。他们是真正的自由精神，总能找到理由微笑，并以其独特的魅力感染身边的人。" },
+    "INFJ": { title_zh: "提倡者", title_en: "The Counselor", temperament: "理想主义者 (Idealist)", color: "#2ecc71", description: "富有理想、有远见、深刻。他们安静而神秘，却能鼓舞人心，并孜孜不倦地为世界留下积极的印记。" },
+    "INFP": { title_zh: "调停者", title_en: "The Healer", temperament: "理想主义者 (Idealist)", color: "#2ecc71", description: "善良、富有诗意、利他主义。他们看似安静，但内心充满激情和火焰。他们总是从好的角度看待人和事，希望世界更美好。" },
+    "ENFJ": { title_zh: "主人公", title_en: "The Teacher", temperament: "理想主义者 (Idealist)", color: "#2ecc71", description: "有魅力、鼓舞人心、是天生的领导者。他们充满激情和魅力，能够吸引并激励听众，为共同的善而努力。" },
+    "ENFP": { title_zh: "竞选者", title_en: "The Champion", temperament: "理想主义者 (Idealist)", color: "#2ecc71", description: "热情、有创造力、善于社交。他们是真正的自由精神，总能找到理由微笑，并以其独特的魅力感染身边的人。" },
 
     // 理性者 (Rationals) - NT - 紫色 🟪
-    "INTJ": { title: "建筑师 (The Mastermind)", temperament: "理性者 (Rational)", color: "#8e44ad", description: "独立、有策略、富有想象力。他们是天生的战略家，对一切都抱有改进的计划，拥有驱动他们实现目标的巨大决心。" },
-    "INTP": { title: "逻辑学家 (The Architect)", temperament: "理性者 (Rational)", color: "#8e44ad", description: "充满好奇心、知识渊博、善于分析。他们对知识有着永不满足的渴望，并以其独特的视角和活跃的智力为世界增添光彩。" },
-    "ENTJ": { title: "指挥官 (The Commander)", temperament: "理性者 (Rational)", color: "#8e44ad", description: "大胆、有远见、意志坚定。他们是天生的领导者，用魅力和自信汇集人群，总能找到或创造解决方法。" },
-    "ENTP": { title: "辩论家 (The Inventor)", temperament: "理性者 (Rational)", color: "#8e44ad", description: "聪明、好奇、喜欢挑战。他们无法抗拒智力上的挑战，喜欢剖析和重建思想，是天生的“杠精”和头脑风暴者。" }
+    "INTJ": { title_zh: "建筑师", title_en: "The Mastermind", temperament: "理性者 (Rational)", color: "#8e44ad", description: "独立、有策略、富有想象力。他们是天生的战略家，对一切都抱有改进的计划，拥有驱动他们实现目标的巨大决心。" },
+    "INTP": { title_zh: "逻辑学家", title_en: "The Architect", temperament: "理性者 (Rational)", color: "#8e44ad", description: "充满好奇心、知识渊博、善于分析。他们对知识有着永不满足的渴望，并以其独特的视角和活跃的智力为世界增添光彩。" },
+    "ENTJ": { title_zh: "指挥官", title_en: "The Commander", temperament: "理性者 (Rational)", color: "#8e44ad", description: "大胆、有远见、意志坚定。他们是天生的领导者，用魅力和自信汇集人群，总能找到或创造解决方法。" },
+    "ENTP": { title_zh: "辩论家", title_en: "The Inventor", temperament: "理性者 (Rational)", color: "#8e44ad", description: "聪明、好奇、喜欢挑战。他们无法抗拒智力上的挑战，喜欢剖析和重建思想，是天生的“杠精”和头脑风暴者。" }
 };
 
 
