@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI 人格测试-升级版</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- 开始界面 -->
+        <div id="start-container">
+            <h1>MBTI 人格深度探索</h1>
+            <p>选择一个版本开始测试，探索你的性格类型，更好地了解自己。</p>
+            <button id="start-simple-btn" class="version-btn">开始简易版 (28题)</button>
+            <button id="start-complete-btn" class="version-btn secondary">开始完整版 (80题)</button>
+        </div>
+
+        <!-- 测试界面 -->
+        <div id="quiz-container">
+            <div class="progress-bar-container">
+                <div id="progress-bar"></div>
+            </div>
+            <div id="question-container">
+                <p id="question-text" class="question-text"></p>
+                <div class="options">
+                    <button id="option-a" class="option-btn"></button>
+                    <button id="option-b" class="option-btn"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 结果界面 -->
+        <div id="result-container">
+            <h2>你的测试结果是:</h2>
+            <div id="result-type"></div>
+            <div id="result-temperament"></div>
+            <div id="result-title"></div>
+            <p id="result-description"></p>
+            <button class="version-btn" style="margin-top: 20px;" onclick="restartQuiz()">返回首页</button>
+        </div>
+
+        <!-- 16种人格总览 -->
+        <div id="all-types-container">
+            <h2>16种人格类型一览</h2>
+            <div id="types-grid" class="types-grid">
+                <!-- 由JavaScript动态生成 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入JS文件 -->
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
