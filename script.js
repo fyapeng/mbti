@@ -22,8 +22,16 @@ let activeQuestions = [];
 
 // --- 初始化 ---
 document.addEventListener('DOMContentLoaded', () => {
-    populateAllTypesGrid();
-    startCompleteBtn.addEventListener('click', () => startQuiz(completeQuestions)); // 使用完整版
+    populateAllTypesGrid(); // 页面加载时就渲染16人格网格
+    
+    // 确保按钮和问题变量都已加载
+    if (startSimpleBtn && simpleQuestions) {
+        startSimpleBtn.addEventListener('click', () => startQuiz(simpleQuestions));
+    }
+    if (startCompleteBtn && completeQuestions) {
+        startCompleteBtn.addEventListener('click', () => startQuiz(completeQuestions));
+    }
+    
     optionAButton.addEventListener('click', () => handleAnswer('A'));
     optionBButton.addEventListener('click', () => handleAnswer('B'));
 });
@@ -88,7 +96,7 @@ function showResult() {
     document.getElementById('result-temperament').textContent = resultData.temperament;
     document.getElementById('result-temperament').style.color = resultData.color;
 
-    document.getElementById('result-title').textContent = resultData.title;
+    document.getElementById('result-title').textContent = `${resultData.title_zh} (${resultData.title_en})`;
     document.getElementById('result-description').textContent = resultData.description;
     
     resultContainer.style.borderColor = resultData.color;
@@ -107,6 +115,9 @@ function restartQuiz() {
     progressBar.style.width = '0%';
 }
 
+/**
+ * 修改此函数以支持新的样式
+ */
 function populateAllTypesGrid() {
     typesGrid.innerHTML = ''; // 清空
     for (const type in personalityTypes) {
@@ -115,9 +126,13 @@ function populateAllTypesGrid() {
         card.className = 'type-card';
         card.style.borderColor = data.color;
         
+        // 新的HTML结构，将中英文标题分开
         card.innerHTML = `
             <div class="type-card-name" style="color: ${data.color};">${type}</div>
-            <div class="type-card-title">${data.title}</div>
+            <div class="type-card-title">
+                ${data.title_zh}
+                <span class="type-card-title-en">(${data.title_en})</span>
+            </div>
         `;
         typesGrid.appendChild(card);
     }
